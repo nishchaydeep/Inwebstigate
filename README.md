@@ -2,7 +2,7 @@
 
 **AI-Powered Web Investigation Tool**
 
-![Inwebstigate Interface](screenshot.png)
+![Inwebstigate Interface](images/screenshot.png)
 
 An intelligent web investigation tool that uses AI to navigate the web, extract information, and answer your queries by intelligently browsing multiple websites.
 
