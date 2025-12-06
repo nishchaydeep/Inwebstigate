@@ -1,0 +1,15 @@
+selenium==4.16.0
+beautifulsoup4==4.12.3
+lxml==5.1.0
+requests==2.31.0
+python-dotenv==1.0.0
+groq==0.4.2
+langchain==0.1.0
+langchain-community==0.0.10
+tiktoken==0.5.2
+webdriver-manager==4.0.1
+flask==3.0.0
+flask-cors==4.0.0
+flask-socketio==5.3.5
+python-socketio==5.10.0
+

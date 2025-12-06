@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inwebstigate - AI Web Investigator</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🔍 Inwebstigate</h1>
+            <p class="subtitle">AI-Powered Web Investigation</p>
+        </header>
+
+        <!-- Investigation Settings -->
+        <section class="settings-panel">
+            <h2>Investigation Settings</h2>
+            
+            <div class="form-group">
+                <label for="query">Query *</label>
+                <input type="text" id="query" placeholder="What would you like to investigate?" required>
+            </div>
+
+            <div class="form-group">
+                <label for="start-url">Starting URL (optional)</label>
+                <input type="url" id="start-url" placeholder="https://" value="https://">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>LLM Provider</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="llm" value="ollama" id="ollama-radio" checked>
+                            <span>Ollama (Local)</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="llm" value="groq" id="groq-radio">
+                            <span>Groq (Cloud)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="max-depth">Max Pages</label>
+                    <input type="number" id="max-depth" min="1" max="10" value="5">
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button id="start-btn" class="btn btn-primary">🚀 Start Investigation</button>
+                <button id="stop-btn" class="btn btn-danger" disabled>⏹ Stop Investigation</button>
+            </div>
+
+            <div class="progress-container" id="progress-container" style="display: none;">
+                <div class="progress-text" id="progress-text">Initializing...</div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabs -->
+        <section class="tabs-section">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="nav-log">📍 Navigation Log</button>
+                <button class="tab-btn" data-tab="path-tree">🗺️ Investigation Path</button>
+                <button class="tab-btn" data-tab="final-answer">✨ Final Answer</button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="tab-contents">
+                <!-- Navigation Log Tab -->
+                <div class="tab-content active" id="nav-log">
+                    <div class="log-container" id="nav-log-content">
+                        <div class="log-entry info">Ready to investigate. Enter a query and click Start Investigation.</div>
+                    </div>
+                </div>
+
+                <!-- Investigation Path Tab -->
+                <div class="tab-content" id="path-tree">
+                    <div class="tree-container">
+                        <table class="path-table" id="path-table">
+                            <thead>
+                                <tr>
+                                    <th>Step</th>
+                                    <th>URL</th>
+                                    <th>Key Findings</th>
+                                </tr>
+                            </thead>
+                            <tbody id="path-table-body">
+                                <tr>
+                                    <td colspan="3" class="empty-state">No investigation data yet</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Final Answer Tab -->
+                <div class="tab-content" id="final-answer">
+                    <div class="answer-container" id="answer-content">
+                        <div class="empty-state">Final answer will appear here after investigation completes</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Status Bar -->
+        <footer class="status-bar">
+            <span id="status-text">Ready | LLM Provider: Loading...</span>
+            <span id="pages-visited">Pages Visited: 0</span>
+        </footer>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
+
