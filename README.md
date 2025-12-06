@@ -1,4 +1,4 @@
-# 🔍 Inwebstigate
+# Inwebstigate
 
 **AI-Powered Web Investigation Tool**
 
@@ -7,17 +7,20 @@ An intelligent web investigation tool that uses AI to navigate the web, extract 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-## ✨ Features
+## Features
 
-- 🤖 **AI-Powered Navigation**: Uses LLMs to intelligently decide which links to follow
-- 🌐 **Smart Web Scraping**: Handles dynamic JavaScript-rendered content with Selenium
-- 📊 **Visual Path Tracking**: See the investigation path and findings in real-time
-- 🔄 **Dual LLM Support**: Choose between local Ollama or cloud-based Groq API
-- 🎯 **Targeted Information Extraction**: AI extracts only relevant information for your query
-- 🖥️ **Modern Web Interface**: Beautiful Flask web UI with real-time WebSocket updates
-- 📱 **Responsive Design**: Works on desktop, tablet, and mobile devices
+- **AI-Powered Navigation**: Uses LLMs to intelligently decide which links to follow
+- **Smart Web Scraping**: Handles dynamic JavaScript-rendered content with Selenium
+- **Visual Path Tracking**: See the investigation path and findings in real-time
+- **Dual LLM Support**: Choose between local Ollama or cloud-based Groq API
+- **Targeted Information Extraction**: AI extracts only relevant information for your query
+- **Modern Web Interface**: Beautiful Flask web UI with real-time WebSocket updates
+- **Responsive Design**: Works on desktop, tablet, and mobile devices
+- **Early Termination**: Automatically stops when sufficient information is found
+- **Loop Detection**: Prevents getting stuck on the same URLs
+- **Comprehensive Logging**: Detailed logs for debugging and monitoring
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -79,7 +82,7 @@ python3 app.py
 
 The application will automatically open in your default browser at `http://localhost:5000`
 
-## 📖 Usage
+## Usage
 
 1. **Enter your query**: Type the question or topic you want to investigate
 2. **Optional - Set starting URL**: Provide a starting point, or leave blank to use DuckDuckGo
@@ -94,7 +97,7 @@ The application will automatically open in your default browser at `http://local
 - "What is the difference between Ollama and GPT?"
 - "Find information about renewable energy trends in 2024"
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 inwebstigate/
@@ -113,7 +116,7 @@ inwebstigate/
 └── sample.env           # Environment template
 ```
 
-## 🛠️ Configuration
+## Configuration
 
 ### Available Ollama Models
 
@@ -152,7 +155,7 @@ BRIGHT_DATA_HOST=proxy_host
 BRIGHT_DATA_PORT=proxy_port
 ```
 
-## 🎨 Web Interface Features
+## Web Interface Features
 
 ### Navigation Log Tab
 - Real-time updates of page visits via WebSocket
@@ -172,7 +175,7 @@ BRIGHT_DATA_PORT=proxy_port
 - Well-structured, formatted output
 - Automatically switches when complete
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### "Cannot connect to Ollama"
 Make sure Ollama is running:
@@ -197,39 +200,42 @@ pip install --upgrade webdriver-manager
 - Reduce max pages setting
 - Consider using Groq API for cloud speed
 
-## 📝 Technologies Used
+## Technologies Used
 
+- **Flask**: Web framework for the backend
 - **Selenium**: Browser automation and web scraping
 - **BeautifulSoup4**: HTML parsing
-- **Tkinter**: GUI framework
+- **Socket.IO**: Real-time WebSocket communication
 - **Ollama**: Local LLM inference
 - **Groq**: Cloud LLM API
 - **WebDriver Manager**: Automatic ChromeDriver management
 
-## 🤝 Contributing
+## Contributors
 
-Contributions are welcome! Feel free to:
-- Report bugs
-- Suggest features
-- Submit pull requests
+- **Nishchay Deep** 
+- **Yash Pandey**
 
-## 📄 License
+## Contributing
+
+
+## License
 
 MIT License - feel free to use this project for your own purposes!
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-Inspired by [TechWithTim's AI-Web-Scraper](https://github.com/techwithtim/AI-Web-Scraper)
 
-## 💡 Tips
+
+## Tips
 
 - Start with specific queries for best results
 - Provide a starting URL if you know a good source
 - Use Groq for faster responses (requires API key)
 - Monitor the Navigation Log to see AI's reasoning
 - Adjust max pages based on query complexity
+- The application will stop automatically when it finds sufficient information
 
 ---
 
-**Happy Investigating! 🔍**
+**Happy Investigating!**
 
