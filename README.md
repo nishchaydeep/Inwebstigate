@@ -2,6 +2,8 @@
 
 **AI-Powered Web Investigation Tool**
 
+![Inwebstigate Interface](screenshot.png)
+
 An intelligent web investigation tool that uses AI to navigate the web, extract information, and answer your queries by intelligently browsing multiple websites.
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
